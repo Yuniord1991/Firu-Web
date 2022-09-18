@@ -1,0 +1,645 @@
+
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:border-box;
+	box-sizing: border-box;
+}
+
+body{
+	background: #fff;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+
+}
+
+.contenedor{
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	overflow: hidden;
+}
+
+/* - ----- HEADER DE LA MAIN-------*/
+
+header{
+	background: url("../imags/catsdogsfinal.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	max-height: 800px;
+}
+
+header .contenedor .menu{
+	margin: 40px 0;
+	text-align: right;
+}
+
+header .contenedor .menu a{
+	margin: 0 20px;
+	color: #fff;
+	padding-bottom: 9px;
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	font-size: 1em;
+	text-align: center;
+}
+
+ header .contenedor .menu a:hover {
+	border-bottom: 2px solid #fff;
+}
+
+header .contenedor-texto{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin: 190px 0;
+}
+
+header .contenedor-texto .texto{
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 3px;
+	display: inline-block;
+	text-align: center;
+	padding: 20px 60px;
+}
+
+header .contenedor-texto .texto h1,
+header .contenedor-texto .texto h2{
+	color: #5a5a5a;
+	font-weight: 300;
+	margin: 0;
+
+}
+
+header .contenedor-texto .texto .nombre{
+	margin-bottom: 10px;
+	font-size: 50px;
+	line-height: 25px;
+	font-family: 'Patrick Hand', cursive;
+	padding-bottom: 10px;
+}
+
+header .contenedor-texto .texto .slogan{
+	font-size: 25px;
+	line-height: 25px;
+}
+
+/* - ----- MAIN -------*/
+
+.main .contenedor{
+	overflow: visible;
+}
+
+.main .acerca-de {
+	text-align: center;
+
+}
+
+.main .acerca-de .logo{
+	margin-top: -60px;
+}
+
+.main .acerca-de img{
+	vertical-align: top;
+	border-radius: 50%;
+	border: 5px solid rgba(255,255,255,0.2);
+}
+
+.main .acerca-de .texto{
+	font-family: font-family: 'Fira Sans', sans-serif;
+	color: #5a5a5a;
+	font-weight: 600;
+	font-size: 1em;
+	line-height: 30px;
+	width: 80%;
+	margin: 40px auto 60px auto;
+}
+
+.main .acerca-de .texto .titulo{
+	font-size: 34px;
+	line-height: 34px;
+	margin-bottom: 40px;
+	font-weight: 300;
+	color:#dd820d;
+	text-align: center;
+}
+
+/* - ----- FORMULARIO REGISTRO USUARIOS-------*/
+.registro{
+	padding: 60px;
+}
+body .registro .contenedor a{
+	margin: 0 20px;
+	color: #5a5a5a;
+	padding-bottom: 9px;
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	font-size: 1em;
+	text-align: center;
+}
+
+ body .registro .contenedor a:hover {
+	border-bottom: 2px solid #FDCA40;
+}
+.registro .titulo{
+	font-size: 34px;
+	line-height: 34px;
+	margin-bottom: 40px;
+	font-weight: 300;
+	color: #5a5a5a;
+	text-align: center;
+}
+
+.registro .formulario-registro{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.registro .formulario-registro input[type="text"],
+.registro .formulario-registro input[type="email"]{
+	border: 2px solid #cecece;
+	border-radius: 5px;
+	padding: 15px 20px;
+	font-size: 20px;
+	color: #a4a4a4;
+	width: 49%;
+	margin-bottom: 15px;
+}
+
+.registro .formulario-registro .boton{
+	margin: auto;
+	background: #f9ca24;
+	color: #5a5a5a;
+	border-radius: 3px;
+	padding: 15px 48px;
+	cursor: pointer;
+}
+.registro .formulario-registro .boton:hover{
+	color: #fff;
+	opacity: 0.8;
+}
+
+.registro .formulario-registro input[type="text"]:focus,
+.registro .formulario-registro input[type="email"]:focus{
+	border: 2px solid #3895ea;
+}
+
+/* - ----- LISTADO DE MASCOTAS-------*/
+
+
+.contenedor-mascotas{
+	max-width: 90%;
+	margin: auto;
+	overflow: hidden;
+
+}
+
+.lista-mascotas{
+	background-color: #dfe6e9;
+	padding: 3em;
+
+}
+
+.lista-mascotas .card{
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 1em;
+	box-shadow: 0px 10px 5px #b3bec3;
+	text-align: center;
+	font-family: 'Fira Sans', sans-serif;
+	max-width: 75%;
+	max-height: 5%;
+	margin: auto;
+	margin-top: 2em;
+
+}
+
+.card .nombre{
+	font-family: 'Patrick Hand', cursive;
+	font-weight: 600;
+	font-size: 50px;
+	line-height: 30px;
+	width: 80%;
+	margin: 40px auto 60px auto;
+}
+.card .imagen{
+	max-width: 100%;
+	overflow: hidden;
+	border-radius: 5px;
+	margin: auto;
+}
+.card .texto{
+	font-family: font-family: 'Fira Sans', sans-serif;
+	color: #5a5a5a;
+	font-weight: 600;
+	font-size: 1em;
+	line-height: 30px;
+	width: 80%;
+	margin: 40px auto 60px auto;
+}
+.card .boton{
+	background-color: #f9ca24;
+	border: none;
+	padding: 1em;
+	border-radius: 5px;
+	font-weight: bold;
+	width: 100%;
+}
+
+.card .boton:hover{
+	box-shadow: 0px 5px 5px #b2bec3;
+	color:#eb4d4b;
+}
+
+/* - ----- YES- NO PUBLICAR-------*/
+
+.yesno{
+	padding: 60px;
+}
+
+ .yesno .contenedor a{
+	margin: 0 20px;
+	color: #5a5a5a;
+	padding-bottom: 9px;
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	font-size: 1em;
+	text-align: center;
+	position: relative;
+}
+
+ body .yesno .contenedor a:hover {
+	border-bottom: 2px solid #FDCA40;
+
+}
+
+.yesno .titulo{
+	font-size: 34px;
+	line-height: 34px;
+	margin-bottom: 40px;
+	font-weight: 300;
+	color: #5a5a5a;
+	text-align: center;
+}
+
+.yesno .menu{
+position: absolute;
+top:250px;
+left: 510px;
+}
+
+.yesno .btn{
+	margin: auto;
+	text-align: center;
+	background: #f9ca24;
+	color: #fff;
+	border-radius: 3px;
+	font-size: 20 px;
+	padding: 25px 30px;
+	cursor: pointer;
+	border-radius: 100px;
+}
+.yesno .btn:hover{
+	opacity: 0.8;
+	color: #fff;
+}
+
+/* - ----- HEADER DE LA WELCOME USER-------*/
+
+ .header-welcome-user{
+	background: url("../imags/welcomebanner.jpg");
+	background-repeat: no-repeat;
+	background-position: left;
+	max-height: 800px;
+}
+
+.contenedor .menu-welcome{
+	margin: 40px 0;
+	text-align: center;
+}
+
+.contenedor .menu-welcome a{
+	margin: 0 20px;
+	color: #5a5a5a;
+	padding: 9px;
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 2px ;
+	font-size: 1.5em;
+	text-align: center;
+	align-self: center;
+	border-style: solid;
+	background-color: #fff;
+	opacity: 0.8;
+}
+
+ .contenedor .menu-welcome a:hover{
+	box-shadow: 0px 5px 5px #fff;
+	color:#FFD700;
+}
+
+.contenedor-texto-welcome{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin: 190px 350px;
+}
+
+.contenedor-texto-welcome .texto{
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 3px;
+	display: inline-block;
+	text-align: center;
+	padding: 20px 60px;
+}
+
+
+.contenedor-texto-welcome .texto h1,
+.contenedor-texto-welcome .texto h2{
+	color: #5a5a5a;
+	font-weight: 300;
+	margin: 0;
+}
+
+ .contenedor-texto-welcome .texto .nombre{
+	margin-bottom: 10px;
+	font-size: 50px;
+	line-height: 25px;
+	font-family: 'Patrick Hand', cursive;
+	padding-bottom: 10px;
+}
+
+ .contenedor-texto-welcome .texto .slogan{
+	font-size: 25px;
+	line-height: 25px;
+	font-family: 'Patrick Hand', cursive;
+
+}
+
+/* - ----- CREAR ANUNCIO PERRO-------*/
+.contanos{
+	width: 800px;
+	background-color: rgb(249,202,36,0.6);
+	margin:auto;
+	color: #ffffff;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	border-radius: 15px 15px 0px 0px;
+	font-family:'Fira Sans', sans-serif;
+	font-weight: 300;
+}
+
+
+.form-animal{
+	width: 800px;
+
+	margin: auto;
+	color: #ffffff;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	border-radius: 15px 15px 0px 0px;
+	font-family: font-family: 'Fira Sans', sans-serif;
+
+
+}
+
+.mane{
+	background-color: rgb(249,202,36,0.3);
+	width: 800px;
+	margin: auto;
+	color: #5a5a5a; /*color de la letra de los campos*/
+}
+.mane form{
+	padding: 10px;
+}
+
+#campo-nombre{
+	padding-top: 20px;
+	width: 100%;
+	height: 100px;
+	font-family: font-family: 'Fira Sans', sans-serif;
+
+
+}
+.field{
+	position: relative;
+	left: 200px;
+	top: -37px;
+	line-height: 40px;
+	border-radius: 6px;
+	padding: 0 22px;
+	font-size: 16px;
+}
+.campo{
+	margin-left: 25px;
+	margin-top: 30px;
+	width: 125px;
+	color: white;
+	font-size: 18px;
+	font-weight: 200;
+	font-family: font-family: 'Fira Sans', sans-serif;
+
+}
+.campo{
+	position: relative;
+	left: 200px;
+	top: -37px;
+	line-height: 40px;
+	width: 480px;
+	border-radius: 6px;
+	padding: 0 22px;
+	font-size: 16px;
+	color: #555;
+	font-family: font-family: 'Fira Sans', sans-serif;
+}
+
+.seleccion{
+	position: relative;
+	left: 200px;
+	top: -37px;
+	line-height: 40px;
+	width: 532px;
+	height: 40px;
+	border-radius: 6px;
+	padding: 0 22px;
+	font-size: 16px;
+	color: #555;
+	outline: none;
+	overflow: hidden;
+}
+.seleccion option{
+	font-size: 20px;
+}
+
+#checkboxes {
+	width: 100%
+	height:100px;
+	margin-bottom: 20px;
+
+}
+#nombre{
+	width: 100%
+	height:100px;
+	margin-top: 20px;
+}
+.check {
+
+	padding-right: 70px;
+	font-size: 25px;
+	margin-left: 25px;
+	margin-top: 15px;
+	color: white;
+	margin-top: 30px;
+
+}
+.mane .boton{
+
+	background-color: #f9ca24;
+	display: block;
+	margin: 20px 0px 0px 350px;
+	text-align: center;
+	cursor:pointer;
+	outline: none;
+	padding: 5px 5px 5px 5px;
+
+
+}
+
+.mane .boton:hover{
+	box-shadow: 0px 5px 5px #b2bec3;
+	color:#ffffff;
+}
+
+
+/* - - ---- LISTADO POTENCIAL ------*/
+
+body {
+  font-family: sans-serif;
+  background-color: #DEDEDE;
+  color: #333;
+  padding: 20px 0 28px 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.app-title {
+   font-size: 25px;
+	line-height: 34px;
+	margin-bottom: 40px;
+	font-weight: 300;
+	color: #5a5a5a;
+	text-align: center;
+}
+
+.animal {
+  max-width: 650px;
+  padding: 20px;
+  margin: 30px auto;
+  background-color: #FFF;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+  overflow: hidden;
+}
+
+.animal h4 {
+  margin: 0 0 6px 0;
+}
+
+.pet-photo {
+  float: left;
+  width: 40%;
+  margin-right: 15px;
+}
+
+.pet-name {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0 0 1rem 0;
+}
+
+.species {
+  font-size: .9rem;
+  color: #888;
+  vertical-align: middle;
+}
+
+.foods-list {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 17px;
+  font-size: .85rem;
+  line-height: 1.5;
+}
+
+.titulo {
+  font-size: 34px;
+	line-height: 34px;
+	margin-bottom: 40px;
+	font-weight: 300;
+	color: #5a5a5a;
+	text-align: center;
+}
+
+.adoptbtn{
+	margin: auto;
+	text-align: center;
+	background: #f9ca24;
+	color: #fff;
+	border-radius: 1px;
+	font-size: 20 px;
+	padding: 10px 10px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.especiebtn{
+	margin: auto;
+	text-align: center;
+	background: #fff;
+	color: #5a5a5a;
+	border-radius: 1px;
+	font-size: 20 px;
+	padding: 15px 30px;
+	cursor: pointer;
+	margin-right: 20px;
+
+}
+.volverHome{
+	margin: 0 20px;
+	color: #fff;
+	padding-bottom: 9px;
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	font-size: 1em;
+	text-align: left;
+}
+
+ .adoptbtn:hover{
+	box-shadow: 0px 5px 5px #b2bec3;
+	color:#ffffff;
+}
+
+/* - ----- MEDIA QUERIES-------*/
+@media screen and (max-width: 800px){
+	header .menu{
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 500px){
+	header .contenedor-texto .texto .nombre{
+		font-size: 35px;
+	}
+	header .contenedor-texto .texto .slogan{
+		font-size: 18px;
+	}
+}
+

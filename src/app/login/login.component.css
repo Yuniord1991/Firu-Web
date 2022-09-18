@@ -1,0 +1,85 @@
+/* - ----- FORMULARIO LOGIN-------*/
+
+.ingreso{
+	padding: 60px;
+}
+
+body .ingreso .contenedor a{
+	margin: 0 20px;
+	color: #5a5a5a;
+	padding-bottom: 9px;
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	font-size: 1em;
+	text-align: center;
+}
+
+ body .ingreso .contenedor a:hover {
+	border-bottom: 2px solid #FDCA40;
+}
+
+.ingreso .titulo{
+	font-size: 34px;
+	line-height: 34px;
+	margin-bottom: 40px;
+	font-weight: 300;
+	color: #5a5a5a;
+	text-align: center;
+}
+
+.ingreso .formulario-login{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.ingreso .formulario-login input[type="text"],
+.ingreso .formulario-login input[type="email"]{
+	border: 2px solid #cecece;
+	border-radius: 5px;
+	padding: 15px 20px;
+	font-size: 20px;
+	color: #a4a4a4;
+	width: 49%;
+	margin-bottom: 15px;
+}
+
+.ingreso .formulario-login .boton{
+	margin: auto;
+	background: #f9ca24;
+	color: #5a5a5a;
+	border-radius: 3px;
+	padding: 15px 48px;
+	cursor: pointer;
+}
+.ingreso .formulario-login .boton:hover{
+	color: #fff;
+	opacity: 0.8;
+}
+
+.ingreso .formulario-login input[type="text"]:focus,
+.ingreso .formulario-login input[type="email"]:focus{
+	border: 2px solid #3895ea;
+}
+
+body .cta-registro{
+	margin: 40px 0;
+	text-align: right;
+}
+
+body .cta-registro a{
+	margin: 0 20px;
+	color: #3895ea;
+	padding-bottom: 9px;
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	font-size: 1em;
+	text-align: right;
+}
+
+ body .cta-registro a:hover {
+	border-bottom: 2px solid #3895ea;
+
+}
