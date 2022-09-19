@@ -10,6 +10,7 @@ import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule, MatIconModule } from '@angular/material';
+import { WelcomeCarouselComponent } from './main/welcome-carousel/welcome-carousel.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MatButtonModule, MatIconModule } from '@angular/material';
     LoginComponent,
     RegisterComponent,
     MainComponent,
-    NavbarComponent
+    NavbarComponent,
+    WelcomeCarouselComponent
   ],
   imports: [
     BrowserModule,
