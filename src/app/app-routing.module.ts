@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { RegisterComponent } from './register/register.component';
+import { WelcomeFilterComponent } from './welcome-filter/welcome-filter.component';
 
 
 const routes: Routes = [
@@ -19,12 +20,17 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
-    data: { title: 'Registro' }
+    data: { title: 'Registro', animation: 'Registro' }
   },
   {
     path: 'main',
     component: MainComponent,
-    data: { title: 'Principal' }
+    data: { title: 'Principal', animation: 'Principal' }
+  },
+  {
+    path: 'filter',
+    component: WelcomeFilterComponent,
+    data: { title: 'filter', animation: 'filter' }
   }
 ];
 

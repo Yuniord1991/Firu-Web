@@ -1,1 +1,18 @@
+/*
+#aca:hover {
+  transform: scale(1.5);
+  transition: 0.2s;
+  background-image: "../../assets/Images/firuIconLayAdoptar1.png";
+} */
 
+.hovers {
+  image-rendering: url('../../../assets/Images/firuIconLayAdoptar2.png');
+  transition: 0.2s;
+}
+
+.hovers:hover {
+  /* background: url('../../../assets/Images/firuIconTailClick.png'); */
+  content: url('../../../assets/Images/firuIconTailClick.png');
+  transform: scale(1.2);
+  transition: 0.2s;
+}

@@ -9,8 +9,9 @@ import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
-import { MatButtonModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatIconModule } from '@angular/material';
 import { WelcomeCarouselComponent } from './main/welcome-carousel/welcome-carousel.component';
+import { WelcomeFilterComponent } from './welcome-filter/welcome-filter.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WelcomeCarouselComponent } from './main/welcome-carousel/welcome-carous
     RegisterComponent,
     MainComponent,
     NavbarComponent,
-    WelcomeCarouselComponent
+    WelcomeCarouselComponent,
+    WelcomeFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import { WelcomeCarouselComponent } from './main/welcome-carousel/welcome-carous
     FormsModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

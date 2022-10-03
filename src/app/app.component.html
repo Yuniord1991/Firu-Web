@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+<main [@routeAnimations]="prepareRoute(outlet)" class="w-100">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>
+
+<!-- SIN LO DE ARRIBA NO HAY ANIMACION - todos sus atributos son propios de angular - conservar-->
+
