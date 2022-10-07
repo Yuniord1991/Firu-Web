@@ -37,7 +37,7 @@ export const slideInAnimation =
         })
       ]),
       query(':enter', [
-        style({ left: '-100%'})
+        style({ right: '-100%'})
       ]),
       query(':leave', animateChild()),
       group([
