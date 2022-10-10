@@ -1,0 +1,93 @@
+/*#region TITLE ANIMATION*/
+
+.context #title {
+  transition-delay: 1s;
+  transform-origin:center 800px;
+  animation:rotateTitle 0.7s linear;
+}
+/* .context:before { content:''; position:absolute; height:100%; width:100%; background:blue; animation:rotate 3s linear reverse infinite; } */
+@keyframes rotateTitle {
+  0% {
+    transform:rotate(-30deg);
+    opacity: 0;
+  }
+  100% {
+    transform:rotate(0deg);
+    opacity: 1;
+  }
+}
+/*#endregion TITLE ANIMATION*/
+
+/*#region SELECCION ANIMATION */
+
+.context #selection {
+  animation:fadeInSelection 1s linear;
+    transition-timing-function: ease-out;
+    /* animation-delay: 1s; */
+}
+
+@keyframes fadeInSelection {
+  0%{
+    transform: translateY(200px);
+    opacity: 0;
+  }
+
+  50%{
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+/*#endregion SELECCION ANIMATION */
+
+/*#region PETS HOVERS PICS */
+
+.hoverDog:hover {
+  /* content: url('../../assets/Images/firuIconTailClick.png'); */
+  content: url('../../../assets/Images/firuIconTailClick.png');
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+.hoverCat:hover {
+  /* content: url('../../assets/Images/firuIconMfCatClick.png'); */
+  content: url('../../../assets/Images/firuIconMfCatClick.png');
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+/*#endregion PETS HOVERS PICS */
+
+/*#region TENEMOS ANIMATION*/
+
+.context #tenemos {
+  margin-top: 5rem;
+  transition-delay: 1s;
+  animation:fadeInSelectionTenemos 1s linear;
+  transition-timing-function: ease-out;
+}
+
+@keyframes fadeInSelectionTenemos {
+0%{
+  transform: translateY(200px);
+  opacity: 0;
+}
+
+50%{
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+100%{
+  transform: translateY(0px);
+  opacity: 1;
+}
+}
+/*#endregion TITLE ANIMATION*/
+
+.counter {
+  font: 800 40px system-ui;
+}

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,7 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule, MatCardModule, MatIconModule } from '@angular/material';
 import { WelcomeCarouselComponent } from './main/welcome-carousel/welcome-carousel.component';
 import { WelcomeFilterComponent } from './welcome-filter/welcome-filter.component';
-
+import { PetsTypeComponent } from './welcome-filter/pets-type/pets-type.component';
+import { PetsTableComponent } from './welcome-filter/pets-table/pets-table.component';
+import { MaterialModule } from './material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,9 @@ import { WelcomeFilterComponent } from './welcome-filter/welcome-filter.componen
     MainComponent,
     NavbarComponent,
     WelcomeCarouselComponent,
-    WelcomeFilterComponent
+    WelcomeFilterComponent,
+    PetsTypeComponent,
+    PetsTableComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,14 @@ import { WelcomeFilterComponent } from './welcome-filter/welcome-filter.componen
     FormsModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  exports: [
+    PetsTypeComponent,
+    PetsTableComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

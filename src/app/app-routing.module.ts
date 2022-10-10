@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { RegisterComponent } from './register/register.component';
+import { PetsTableComponent } from './welcome-filter/pets-table/pets-table.component';
+import { PetsTypeComponent } from './welcome-filter/pets-type/pets-type.component';
 import { WelcomeFilterComponent } from './welcome-filter/welcome-filter.component';
 
 
