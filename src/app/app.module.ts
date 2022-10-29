@@ -8,29 +8,31 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule, MatCardModule, MatIconModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WelcomeCarouselComponent } from './main/welcome-carousel/welcome-carousel.component';
 import { WelcomeFilterComponent } from './welcome-filter/welcome-filter.component';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     RegisterComponent,
     MainComponent,
     NavbarComponent,
     WelcomeCarouselComponent,
-    WelcomeFilterComponent
+    WelcomeFilterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatCardModule
+    ReactiveFormsModule,
+    MaterialModule,
+  ],
+  entryComponents:[
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

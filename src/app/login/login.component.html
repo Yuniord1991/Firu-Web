@@ -1,20 +1,131 @@
-<p>login works!</p>
-<button [routerLink]="['/register']" routerLinkActive="router-link-active" >ir a register</button>
+<!-- style="margin-left: 12rem; margin-top: 18rem; width:27rem" -->
 
+    <img id="aca" class="row context logo-position" src="../../assets/Images/firuIconSit.png"  [ngStyle]="{'margin-top': this.indexTab ? '8rem' : '3rem'}">
+    <mat-card class="container context orange mat-card-position" [ngStyle]="{'margin-top': this.indexTab ? '16rem' : '11rem'}">
+      <div class="row">
+        <mat-tab-group mat-stretch-tabs class="col justify-content-center" (selectedTabChange)="selectedTab($event.index)">
 
+          <mat-tab label="Logueate" [formGroup]="inicioForm">
+            <div class="col white">
 
-<section class="ingreso">
-  <div class="contenedor">
-    <a href="index.html">Home</a>
-    <h3 class="titulo">¡Qué bueno verte de vuelta!</h3>
-    <form class="formulario-login" action="">
-      <input type="email" placeholder="Email" name="email" required>
-      <input type="text" placeholder="Contraseña" name="password" required>
-      <input class="boton" type="submit" value="Ingresar">
-    </form>
-  </div>
-</section>
+              <div class="row mb-2 mt-3">
+                <mat-form-field class="w-100">
+                  <input matInput type="text" placeholder="Usuario" formControlName="usuario"/>
+                </mat-form-field>
+              </div>
 
-<div class="cta-registro">
-    <a href="formRegistro.html">¿Primera vez en la Firuweb? Registrate</a>
-</div>
+              <div class="row">
+                <mat-form-field class="w-100">
+                  <input matInput type="text" placeholder="Contraseña" formControlName="contraseña"/>
+                </mat-form-field>
+              </div>
+
+              <div class="row">
+                <button mat-raised-button color="primary" class="col justify-content-center">Loguearme</button>
+              </div>
+
+            </div>
+          </mat-tab>
+
+          <mat-tab label="Registrate" [formGroup]="registroForm">
+
+            <div class="col white">
+
+              <div class="row mb-2 mt-3">
+                <mat-form-field class="w-100">
+                  <input matInput type="text" placeholder="Nombre" formControlName="nombre"/>
+                </mat-form-field>
+              </div>
+
+              <div class="row">
+                <mat-form-field class="w-100">
+                  <input matInput type="text" placeholder="Apellido" formControlName="apellido"/>
+                </mat-form-field>
+              </div>
+
+              <div class="row">
+                <mat-form-field class="w-100">
+                  <input matInput type="text" placeholder="Usuario" formControlName="usuario"/>
+                </mat-form-field>
+              </div>
+
+              <div class="row">
+                <mat-form-field class="w-100">
+                  <input matInput type="text" placeholder="Email" formControlName="email"/>
+                </mat-form-field>
+              </div>
+
+              <div class="row">
+                <mat-form-field class="w-100">
+                  <input matInput type="text" placeholder="Contraseña" formControlName="contraseña"/>
+                </mat-form-field>
+              </div>
+
+              <div class="row">
+                <button mat-raised-button color="primary" class="col justify-content-center">Registrarme</button>
+              </div>
+
+            </div>
+
+          </mat-tab>
+
+        </mat-tab-group>
+      </div>
+    </mat-card>
+
+<!-- FONDO ANIMADO, TIENE QUE IR ABAJO PARA QUE FUNCIONE -->
+<div class="area">
+  <!-- <img class="elevation" src="../../../assets/Images/queMascotaBuscas.png" style="width: 30rem; margin-left:32rem; top: 50vh;"> -->
+  <ul class="circles">
+    <!-- cat wools -->
+      <li class="cat-wools"></li>
+      <li class="cat-wools"></li>
+      <li class="cat-wools"></li>
+      <li class="cat-wools"></li>
+      <li class="cat-wools"></li>
+      <li class="cat-wools"></li>
+      <li class="cat-wools"></li>
+      <li class="cat-wools"></li>
+      <li class="cat-wools"></li>
+      <li class="cat-wools"></li>
+  </ul>
+  <!-- dog bones -->
+  <ul class="bones">
+    <li class="dog-bones"></li>
+      <li class="dog-bones"></li>
+      <li class="dog-bones"></li>
+      <li class="dog-bones"></li>
+      <li class="dog-bones"></li>
+      <li class="dog-bones"></li>
+      <li class="dog-bones"></li>
+      <li class="dog-bones"></li>
+      <li class="dog-bones"></li>
+      <li class="dog-bones"></li>
+  </ul>
+  <ul class="circles2">
+    <!-- cat wools 2-->
+      <li class="cat-wools2"></li>
+      <li class="cat-wools2"></li>
+      <li class="cat-wools2"></li>
+      <li class="cat-wools2"></li>
+      <li class="cat-wools2"></li>
+      <li class="cat-wools2"></li>
+      <li class="cat-wools2"></li>
+      <li class="cat-wools2"></li>
+      <li class="cat-wools2"></li>
+      <li class="cat-wools2"></li>
+  </ul>
+  <!-- dog bones 2-->
+  <ul class="bones2">
+      <li class="dog-bones2"></li>
+      <li class="dog-bones2"></li>
+      <li class="dog-bones2"></li>
+      <li class="dog-bones2"></li>
+      <li class="dog-bones2"></li>
+      <li class="dog-bones2"></li>
+      <li class="dog-bones2"></li>
+      <li class="dog-bones2"></li>
+      <li class="dog-bones2"></li>
+      <li class="dog-bones2"></li>
+  </ul>
+</div >
