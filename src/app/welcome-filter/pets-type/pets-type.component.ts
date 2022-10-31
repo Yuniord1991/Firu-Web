@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {transition, trigger, state, query, style, animate, group, stagger, animateChild, keyframes} from '@angular/animations';
+import { PetsTableComponent } from '../pets-table/pets-table.component';
+import { PetsService } from 'src/app/Services/pets.service';
 
 @Component({
   selector: 'app-pets-type',
@@ -37,18 +39,42 @@ export class PetsTypeComponent implements OnInit {
   @Output()
   petTypeEmitter= new EventEmitter<string>();
 
-  constructor() { }
+  cargar: PetsTableComponent;
+
+  constructor(
+    private service: PetsService
+  ) { }
 
   ngOnInit() {
-    this.result = 15;
 
   }
 
   triggerSelected(typeOfPet)
   {
-    this.petTypeSelected = typeOfPet;
-    this.animationstate = "fadeOut";
-    setTimeout(() => {this.animateValue(99, this.result, 2000);this.step = 'done';}, 100);
+    this.service.getAllMascotasForTable(
+      "",
+      "",
+      0,
+      50,
+      typeOfPet,
+      "",
+      "",
+      ""
+      ).subscribe( data => {
+        this.result = data.length;
+
+        // if(data.length < 10)
+        // {
+        //   this.result = "0" + data.Length;
+        // }
+
+        this.petTypeSelected = typeOfPet;
+        this.animationstate = "fadeOut";
+
+        setTimeout(() => {this.animateValue(99, this.result, 2000);this.step = 'done';}, 100);
+    });
+
+
   }
 
   animateValue( start, end, duration) {

@@ -5,64 +5,74 @@
       <div class="row">
         <mat-tab-group mat-stretch-tabs class="col justify-content-center" (selectedTabChange)="selectedTab($event.index)">
 
-          <mat-tab label="Logueate" [formGroup]="inicioForm">
+          <mat-tab label="Logueate" [formGroup]="loginForm">
             <div class="col white">
 
               <div class="row mb-2 mt-3">
                 <mat-form-field class="w-100">
-                  <input matInput type="text" placeholder="Usuario" formControlName="usuario"/>
+                  <input matInput type="text" placeholder="Usuario/Email" formControlName="userLog" required maxlength="30"/>
                 </mat-form-field>
               </div>
 
               <div class="row">
                 <mat-form-field class="w-100">
-                  <input matInput type="text" placeholder="Contraseña" formControlName="contraseña"/>
+                  <input matInput type="text" placeholder="Contraseña" formControlName="passwordLog" required [type]="show ? 'text' : 'password'"/>
+                  <mat-icon matSuffix (click)="password()">{{show ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
               </div>
 
               <div class="row">
-                <button mat-raised-button color="primary" class="col justify-content-center">Loguearme</button>
+                <button mat-raised-button color="primary" class="col justify-content-center" (click)="login()" [disabled]="loginForm.invalid">Loguearme</button>
               </div>
 
             </div>
           </mat-tab>
 
-          <mat-tab label="Registrate" [formGroup]="registroForm">
+          <mat-tab label="Registrate" [formGroup]="registerForm">
 
             <div class="col white">
 
               <div class="row mb-2 mt-3">
                 <mat-form-field class="w-100">
-                  <input matInput type="text" placeholder="Nombre" formControlName="nombre"/>
+                  <input matInput type="text" placeholder="Nombre" formControlName="firstName" required/>
                 </mat-form-field>
               </div>
 
               <div class="row">
                 <mat-form-field class="w-100">
-                  <input matInput type="text" placeholder="Apellido" formControlName="apellido"/>
+                  <input matInput type="text" placeholder="Apellido" formControlName="lastName" required/>
                 </mat-form-field>
               </div>
 
               <div class="row">
                 <mat-form-field class="w-100">
-                  <input matInput type="text" placeholder="Usuario" formControlName="usuario"/>
+                  <input matInput type="text" placeholder="Usuario" formControlName="user" required maxlength="15"/>
+                  <!-- <mat-error *ngIf="invalidar == true"> -->
+                  <mat-error *ngIf="this.registerForm.get('user').invalid || this.invalidateUser == true">{{getUserErrorMessage()}}</mat-error>
+                  <mat-hint>Máximo 15 caracteres</mat-hint>
                 </mat-form-field>
               </div>
 
               <div class="row">
                 <mat-form-field class="w-100">
-                  <input matInput type="text" placeholder="Email" formControlName="email"/>
+                  <input matInput type="text" placeholder="Email" formControlName="email" required/>
+                  <mat-error *ngIf="this.registerForm.get('email').invalid || this.invalidateEmail == true">{{getEmailErrorMessage()}}</mat-error>
                 </mat-form-field>
               </div>
 
               <div class="row">
                 <mat-form-field class="w-100">
-                  <input matInput type="text" placeholder="Contraseña" formControlName="contraseña"/>
+                  <input matInput type="text" placeholder="Contraseña" formControlName="password" required [type]="show ? 'text' : 'password'"/>
+                  <mat-icon matSuffix (click)="password()">{{show ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
+                <!-- <span mat-button class="material-icons" (click)="password()" style="width: 10%;padding-top: 3%;">
+                  {{show ? 'visibility_off' : 'visibility'}}
+                </span> -->
+
               </div>
 
               <div class="row">
-                <button mat-raised-button color="primary" class="col justify-content-center">Registrarme</button>
+                <button mat-raised-button color="primary" class="col justify-content-center" (click)="register()" [disabled]="registerForm.invalid">Registrarme</button>
               </div>
 
             </div>

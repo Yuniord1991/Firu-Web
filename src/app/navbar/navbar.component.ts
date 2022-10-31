@@ -1,5 +1,5 @@
 import { trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -16,11 +16,28 @@ import { Component, OnInit } from '@angular/core';
   //   ]),
   // ],
 })
+
 export class NavbarComponent implements OnInit {
+
+  @Input()
+  userLogged: any = null;
+
+  showUser: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+    if (this.userLogged.userLogged.userName != undefined && this.userLogged.userLogged.userName != null )
+    {
+      this.showUser = true;
+      console.log("this.showUser", this.showUser)
+    }
+  }
+
+  closeSession()
+  {
+    localStorage.removeItem("userLogged");
+    this.showUser = false;
   }
 
 }

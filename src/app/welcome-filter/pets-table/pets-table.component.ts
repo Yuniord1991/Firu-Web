@@ -120,10 +120,10 @@ export class PetsTableComponent implements OnInit {
       this.formGroup.get("size").value,
       this.formGroup.get("age").value
     ).subscribe( data => {
-      // console.log("respuesta ", data);
-      this.dataTable = data;
+      console.log("respuesta ", data);
+      this.dataTable = data.mascotas;
       this.dataTableLength = data.length;
-    console.log("this.specieSelected ", this.dataTable);
+      console.log("this.specieSelected ", this.dataTable);
 
     });
   }

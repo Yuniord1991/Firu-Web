@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  sendLogged;
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
+    let sessionsExistent = JSON.parse(localStorage.getItem("userLogged"));
+
+    if(sessionsExistent.login != null && sessionsExistent.login != undefined && sessionsExistent.login == true)
+    {
+      console.log("usuario logueado ", sessionsExistent);
+      this.sendLogged = sessionsExistent;
+    }
   }
 
 }
