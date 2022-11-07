@@ -14,10 +14,14 @@ export class MainComponent implements OnInit {
   {
     let sessionsExistent = JSON.parse(localStorage.getItem("userLogged"));
 
-    if(sessionsExistent.login != null && sessionsExistent.login != undefined && sessionsExistent.login == true)
+    if(sessionsExistent != null && sessionsExistent != undefined)
     {
       console.log("usuario logueado ", sessionsExistent);
       this.sendLogged = sessionsExistent;
+    }
+    else
+    {
+      this.sendLogged = false;
     }
   }
 

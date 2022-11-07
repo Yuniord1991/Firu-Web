@@ -27,10 +27,15 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (this.userLogged.userLogged.userName != undefined && this.userLogged.userLogged.userName != null )
+    // if (this.userLogged.userLogged.userName != undefined && this.userLogged.userLogged.userName != null )
+    if (this.userLogged != false)
     {
       this.showUser = true;
       console.log("this.showUser", this.showUser)
+    }
+    else
+    {
+      this.showUser = false;
     }
   }
 

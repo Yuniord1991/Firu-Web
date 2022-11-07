@@ -19,11 +19,13 @@
         <a class="nav-link" routerLink="/login">Inicio de Sesión</a>
       </li>
       <li class="nav-item mr-4" *ngIf="this.showUser">
-        <button type="button" class="btn btn-success nav-lin" matTooltip="Cerrar Sesión" (click)="closeSession()">
-          <!-- style="height: 2.3rem;" -->
-          <!-- <a class="nav-link mb-2" >{{this.userLogged.userLogged.userName}}</a> -->
+        <button mat-button [matMenuTriggerFor]="menu" type="button" class="btn btn-success nav-lin" matTooltip="Opciones">
           {{this.userLogged.userLogged.userName}}
         </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/dashBoard">Dashboard</button>
+          <button mat-menu-item (click)="closeSession()">Cerrar Sesión</button>
+        </mat-menu>
       </li>
     </ul>
   </div>
