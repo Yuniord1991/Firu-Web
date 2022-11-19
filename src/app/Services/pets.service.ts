@@ -17,6 +17,11 @@ export class PetsService {
     return this.httpClient.get<any>("https://localhost:5001/api/Mascotas");
   }
 
+  GetMascotasForDashboard(): Observable<any> {
+    // return this.httpClient.get<any>(environment.serverUrl + "/api/Mascotas");
+    return this.httpClient.get<any>("https://localhost:5001/api/Mascotas/GetMascotasForDashboard");
+  }
+
   getAllMascotasForTable(
     // sortDirection = "",
     // sortProperty = "",

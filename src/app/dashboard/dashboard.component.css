@@ -1,0 +1,45 @@
+.backks {
+  width: 100%;
+}
+
+.extendHeight {
+  height:500px;
+}
+
+.extendHalf {
+  height:222px;
+}
+
+.toolbarColor {
+  background: rgb(255, 255, 255);
+}
+
+.hrOuter {
+  background-color: rgb(246, 246, 246);
+  height: 2px;
+  border: 0;
+  border-radius: 20px;
+  margin-top: 0.01rem;
+  margin-bottom: 1rem;
+}
+
+.hrOuter2 {
+  background-color: rgb(246, 246, 246);
+  height: 2px;
+  border: 0;
+  border-radius: 20px;
+  margin-top: 0.01rem;
+  margin-bottom: 0.1rem;
+}
+
+.hrCard {
+  background-color: red;
+  height: 0.5rem;
+  width: 6rem;
+  border: 0;
+  border-radius: 20px;
+  margin-bottom: 0.2rem;
+  margin-left: -0.1rem;
+}
+
+

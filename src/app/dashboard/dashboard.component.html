@@ -1,0 +1,263 @@
+<body style="background-color: rgb(239, 242, 247); height: 700px;">
+  <mat-toolbar class="toolbarColor ">
+    <!-- mat-elevation-z2 -->
+    <mat-toolbar-row>
+      <div class="col-10">
+        <img src="../../assets/Images/dashboard.png" width="160" height="35" class="d-inline-block align-top mr-1" alt="">
+      </div>
+      <div class="col-1" style="margin-left: -3rem;margin-right: 2rem;">
+        <button mat-button matTooltip="Inicio" class="material-icons" routerLink="/main">
+          <span class="material-icons" style="color: rgb(77, 77, 77); font-size: 30px;" >
+            home
+          </span>
+        </button>
+      </div>
+
+      <div class="col-1" *ngIf="this.showUser"  style="margin-left: -5rem;">
+        <button mat-button [matMenuTriggerFor]="menu" type="button" class="btn btn-success" matTooltip="Opciones">
+          {{this.userLogged.userLogged.userName}}
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="closeSession()">Cerrar Sesión</button>
+        </mat-menu>
+        <img src="../../assets/Images/firuIconSmart3.png" width="35" height="35" class="d-inline-block align-top mr-1 ml-2" alt="">
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <hr class="hrOuter">
+  <hr class="hrOuter2">
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col">
+        <h5 class="m-3">Movimientos / Facturacion</h5>
+
+        <mat-card class="m-2 mat-elevation-z3 mb-4">
+          <hr class="hrCard" style="background-color: rgb(162, 0, 255);">
+
+          <div class="row pb-1 pt-1 ml-1">
+            <h6>Ingresos</h6>
+          </div>
+
+          <div  class="row" style="margin-bottom: -0.4rem;">
+            <div class="col-1 pt-1 ml-2">
+              <!-- <img src="../../assets/Images/IconDog.png" width="22" height="25" class="d-inline-block align-top mr-1 ml-2 pb-1"> -->
+              <span class="material-icons d-inline-block align-top mr-1 ml-2" style="font-size: 20px; color:rgb(101, 101, 101)">trending_up</span>
+            </div>
+
+            <div class="col">
+              <p class="pl-3">{{movimientos.ingresos}}</p>
+            </div>
+
+            <div class="col" style="margin-top: -0.4rem; margin-left: 7rem;">
+              <button mat-button matTooltip="Ver ingresos">
+                <span class="material-icons">
+                  more_horiz
+                </span>
+              </button>
+            </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="m-2 mat-elevation-z3 mb-4">
+          <hr class="hrCard" style="background-color: rgb(162, 0, 255);">
+
+          <div class="row pb-1 pt-1 ml-1">
+            <h6>Donaciones</h6>
+          </div>
+
+          <div  class="row" style="margin-bottom: -0.4rem;">
+            <div class="col-1 pt-1 ml-2">
+              <!-- <img src="../../assets/Images/IconDog.png" width="22" height="25" class="d-inline-block align-top mr-1 ml-2 pb-1"> -->
+              <span class="material-icons d-inline-block align-top mr-1 ml-2" style="font-size: 17px; color:rgb(101, 101, 101)">volunteer_activism</span>
+            </div>
+
+            <div class="col">
+              <p class="pl-3">{{movimientos.donaciones}}</p>
+            </div>
+
+            <div class="col" style="margin-top: -0.4rem; margin-left: 7rem;">
+              <button mat-button matTooltip="Ver donaciones">
+                <span class="material-icons">
+                  more_horiz
+                </span>
+              </button>
+            </div>
+          </div>
+
+        </mat-card>
+
+        <mat-card class="m-2 mat-elevation-z3 ">
+          <hr class="hrCard" style="background-color: rgb(162, 0, 255);">
+
+          <div class="row pb-1 pt-1 ml-1">
+            <h6>Egresos</h6>
+          </div>
+
+          <div  class="row" style="margin-bottom: -0.4rem;">
+            <div class="col-1 pt-1 ml-2">
+              <!-- <img src="../../assets/Images/IconDog.png" width="22" height="25" class="d-inline-block align-top mr-1 ml-2 pb-1"> -->
+              <span class="material-icons d-inline-block align-top mr-1 ml-2" style="font-size: 18px; color:rgb(101, 101, 101)">point_of_sale</span>
+            </div>
+
+            <div class="col">
+              <p class="pl-3">{{movimientos.egresos}}</p>
+            </div>
+
+            <div class="col" style="margin-top: -0.4rem; margin-left: 7rem;">
+              <button mat-button matTooltip="Ver egresos">
+                <span class="material-icons">
+                  more_horiz
+                </span>
+              </button>
+            </div>
+          </div>
+
+        </mat-card>
+
+      </div>
+
+      <div class="col">
+        <h5 class="m-3">Mascotas Publicadas</h5>
+        <mat-card class="m-2 mat-elevation-z3">
+          <!-- extendHeight -->
+          <hr class="hrCard" style="background-color: rgb(14, 160, 123);">
+
+          <div class="container ml-2 mt-4">
+            <div class="row justify-content-between">
+
+              <div class="col-4">
+                <div class="row">
+                  <img class="mr-3" src="../../assets/Images/IconDog.png" width="22" height="25" >
+                  <h6 class="pt-1">Perros</h6>
+                </div>
+              </div>
+
+              <p class="col-2 mr-4">{{perros}}</p>
+
+            </div>
+            <hr>
+
+            <div class="row justify-content-between">
+
+              <div class="col-4">
+                <div class="row">
+                  <img class="mr-3" src="../../assets/Images/IconCat.png" width="22" height="25" >
+                  <h6 class="pt-1">Gatos</h6>
+                </div>
+              </div>
+
+              <p class="col-2 mr-4">{{gatos}}</p>
+
+            </div>
+            <hr>
+
+            <div class="row justify-content-between">
+
+              <div class="col-4">
+                <div class="row">
+                  <img class="mr-3" src="../../assets/Images/IconTotal.png" width="25" height="21" >
+                  <h6 class="pt-1">Total</h6>
+                </div>
+              </div>
+
+              <p class="col-2 mr-4">{{total}}</p>
+
+            </div>
+            <!-- <hr>
+            <div class="row pb-2 pt-2">
+              <img src="../../assets/Images/IconTotal.png" width="25" height="21" class="d-inline-block align-top mr-1 ml-2" alt="">
+              <h6 class="ml-2 pt-1">Total</h6>
+              <p class="pl-3">6546</p>
+            </div> -->
+            <hr>
+
+          </div>
+
+          <div class="row" style="margin-top: -0.4rem; margin-left: 7rem;">
+            <button mat-button matTooltip="Ver listado" style="font-size: 12px;" >
+              ver todo
+            </button>
+          </div>
+
+        </mat-card>
+      </div>
+
+      <div class="col">
+        <h5 class="m-3">Voluntarios</h5>
+        <mat-card class="m-2 mat-elevation-z3 ">
+          <hr class="hrCard" style="background-color: rgb(250, 139, 178);">
+
+          <!-- <div *ngFor="let item of userList">
+            <span class="material-icons">person_outline</span>
+            <span>{{item}}</span>
+          </div> -->
+          <div class="ml-3 mt-3">
+            <div class="row pb-2 pt-2" *ngFor="let item of volunteerList">
+              <span class="material-icons d-inline-block align-top mr-1 ml-2" style="font-size: 20px; color:rgb(101, 101, 101)">person_outline</span>
+              <span class="ml-2 pt-1" style="font-size: 12px;">{{item.nombre}}</span>
+            </div>
+          </div>
+          <hr>
+          <div class="row" style="margin-top: -0.4rem; margin-left: 7rem;">
+            <button mat-button matTooltip="Ver listado" style="font-size: 12px;" >
+              ver todo
+            </button>
+          </div>
+
+        </mat-card>
+      </div>
+
+      <div class="col">
+        <div>
+          <h5 class="m-3">Adoptantes en Espera</h5>
+          <mat-card class="m-2 mat-elevation-z3">
+            <hr class="hrCard" style="background-color: rgb(255, 159, 74);">
+
+            <div class="ml-3 mt-2">
+              <div class="row pt-1" *ngFor="let item of espAdoptersList">
+                <span class="material-icons d-inline-block align-top mr-1 ml-2" style="font-size: 20px; color:rgb(101, 101, 101)">person_outline</span>
+                <span class="ml-2 pt-1" style="font-size: 12px;">{{item.nombre}}</span>
+              </div>
+            </div>
+            <hr>
+            <div class="row" style="margin-top: -0.8rem; margin-left: 7rem;">
+              <button mat-button matTooltip="Ver todo" style="font-size: 12px;" >
+                ver todo
+              </button>
+            </div>
+
+          </mat-card>
+        </div>
+
+        <div>
+          <h5 class="m-3">Malos Adoptantes</h5>
+          <mat-card class="m-2 mat-elevation-z3">
+            <hr class="hrCard" style="background-color: rgb(255, 60, 0);">
+
+            <div class="ml-3 mt-2">
+              <div class="row pt-1" *ngFor="let item of badAdoptersList">
+                <span class="material-icons d-inline-block align-top mr-1 ml-2" style="font-size: 20px; color:rgb(101, 101, 101)">person_outline</span>
+                <span class="ml-2 pt-1" style="font-size: 12px;">{{item.nombre}}</span>
+              </div>
+            </div>
+            <hr>
+            <div class="row" style="margin-top: -0.8rem; margin-left: 7rem;">
+              <button mat-button matTooltip="Ver todo" style="font-size: 12px;" >
+                ver todo
+              </button>
+            </div>
+
+
+          </mat-card>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+</body>

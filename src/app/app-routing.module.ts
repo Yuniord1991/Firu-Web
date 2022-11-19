@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
-import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { PetsTableComponent } from './welcome-filter/pets-table/pets-table.component';
 import { PetsTypeComponent } from './welcome-filter/pets-type/pets-type.component';
 import { WelcomeFilterComponent } from './welcome-filter/welcome-filter.component';
@@ -20,9 +20,9 @@ const routes: Routes = [
     data: { title: 'Inicio Sesion' }
   },
   {
-    path: 'register',
-    component: RegisterComponent,
-    data: { title: 'Registro', animation: 'Registro' }
+    path: 'dashboard',
+    component: DashboardComponent,
+    data: { title: 'dashboard', animation: 'dashboard' }
   },
   {
     path: 'main',

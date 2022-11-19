@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +18,7 @@ import { PetsTableComponent } from './welcome-filter/pets-table/pets-table.compo
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
+    DashboardComponent,
     MainComponent,
     NavbarComponent,
     WelcomeCarouselComponent,
