@@ -1,0 +1,161 @@
+<div class="container mt-5" style="margin-bottom: -0.7rem; z-index: 200;">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <img src="../../assets/Images/adoptantes.png" width="250" height="50" style="margin-left: 3.5rem;">
+    </div>
+  </div>
+</div>
+<mat-card class="container align-items-center w-50" style="z-index: -200;">
+  <hr>
+  <div class="row justify-content-center" >
+    <div class="col-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="DNI"  formControlName="dni">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('dni').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Nombre" formControlName="nombre">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('nombre').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+
+    <div class="col-lg-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Apellido"  formControlName="apellido">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('apellido').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Edad" formControlName="edad" type="text" pattern="\d*" maxlength="2" required>
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('edad').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="row justify-content-center">
+
+    <div class="col-lg-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Provincia"  formControlName="provincia">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('provincia').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Ciudad"  formControlName="ciudad">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('ciudad').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg-5"  [formGroup]="formGroup">
+      <mat-form-field class="w-100" style="margin-left:4.3rem;">
+        <input matInput placeholder="Localidad" formControlName="localidad">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('localidad').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-3" [formGroup]="formGroup">
+      <mat-form-field class="w-100" style="margin-left:4.3rem;">
+        <mat-label>Calificación</mat-label>
+        <mat-select formControlName="calificacion" required>
+          <mat-option *ngFor="let calificacion of calificaciones" [value]="calificacion.label">
+            {{ calificacion.name }}
+          </mat-option>
+        </mat-select>
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('calificacion').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-3">
+      <div class="w-100 mt-3" style="margin-left:4.3rem;">
+        <mat-checkbox (click)="this.assignCheck()">Espera</mat-checkbox>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- [disabled]="registerForm.invalid" -->
+  <div class="row justify-content-center mt-3 mb-3">
+    <button mat-raised-button color="primary" class="col-4 align-center mr-2" (click)="register()" [disabled]="this.formGroup.invalid">Registrar Adoptante</button>
+    <button mat-raised-button color="primary" class="col-4 align-center ml-2" routerLink="/dashboard">Volver</button>
+  </div>
+
+</mat-card>

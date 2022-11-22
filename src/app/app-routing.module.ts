@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PetsTableComponent } from './welcome-filter/pets-table/pets-table.component';
 import { PetsTypeComponent } from './welcome-filter/pets-type/pets-type.component';
 import { WelcomeFilterComponent } from './welcome-filter/welcome-filter.component';
+import { DashboardTablesComponent } from './dashboard-tables/dashboard-tables.component';
+import { FormsComponent } from './forms/forms.component';
 
 
 const routes: Routes = [
@@ -33,7 +35,27 @@ const routes: Routes = [
     path: 'filter',
     component: WelcomeFilterComponent,
     data: { title: 'filter', animation: 'filter' }
-  }
+  },
+  {
+    path: 'dashboard-tables/:table',
+    component: DashboardTablesComponent,
+    data: { title: 'table', animation: 'filter' }
+  },
+  {
+    path: 'dashboard-tables/movimientos/:tipo',
+    component: DashboardTablesComponent,
+    data: { title: 'table', animation: 'filter' }
+  },
+  {
+    path: 'dashboard-tables/adoptantes/:caseAdopters',
+    component: DashboardTablesComponent,
+    data: { title: 'table', animation: 'filter' }
+  },
+  {
+    path: 'forms/:form',
+    component: FormsComponent,
+    data: { title: 'form', animation: 'filter' }
+  },
 ];
 
 @NgModule({

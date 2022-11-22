@@ -15,6 +15,16 @@ import { WelcomeFilterComponent } from './welcome-filter/welcome-filter.componen
 import { PetsTypeComponent } from './welcome-filter/pets-type/pets-type.component';
 import { PetsTableComponent } from './welcome-filter/pets-table/pets-table.component';
 
+import { DashboardTablesComponent } from './dashboard-tables/dashboard-tables.component';
+import { MovimientosTableComponent } from './dashboard-tables/movimientos-table/movimientos-table.component';
+import { VoluntariosTableComponent } from './dashboard-tables/voluntarios-table/voluntarios-table.component';
+import { AdoptantesTableComponent } from './dashboard-tables/adoptantes-table/adoptantes-table.component';
+import { FormsComponent } from './forms/forms.component';
+import { FormVoluntarioComponent } from './forms/form-voluntario/form-voluntario.component';
+import { FormAdoptanteComponent } from './forms/form-adoptante/form-adoptante.component';
+import { FormMovimientoComponent } from './forms/form-movimiento/form-movimiento.component';
+import { FormMascotaComponent } from './forms/form-mascota/form-mascota.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +35,16 @@ import { PetsTableComponent } from './welcome-filter/pets-table/pets-table.compo
     WelcomeFilterComponent,
     LoginComponent,
     PetsTypeComponent,
-    PetsTableComponent
+    PetsTableComponent,
+    DashboardTablesComponent,
+    MovimientosTableComponent,
+    VoluntariosTableComponent,
+    AdoptantesTableComponent,
+    FormsComponent,
+    FormVoluntarioComponent,
+    FormAdoptanteComponent,
+    FormMovimientoComponent,
+    FormMascotaComponent
   ],
   imports: [
     BrowserModule,

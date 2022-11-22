@@ -1,4 +1,11 @@
-<mat-card class="container mt-5">
+<div class="container mt-1" style="margin-bottom: -1rem; z-index: 200;">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <img src="../../assets/Images/Mascotas.png" width="250" height="57" style="margin-left: 3.5rem;">
+    </div>
+  </div>
+</div>
+<mat-card class="container" style="z-index: -200;">
   <div class="row">
     <div class="col-lg-2" [formGroup]="formGroup">
       <mat-form-field class="w-100" >
@@ -92,8 +99,7 @@
   </div>
 </mat-card>
 
-
-<mat-card class="container mt-3 mb-3">
+<mat-card class="container mt-1 mb-3">
   <mat-card-content>
     <mat-table [dataSource]="dataTable" matSort matSortDisableClear>
 
@@ -142,13 +148,13 @@
         </mat-cell>
       </ng-container>
 
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      <mat-header-row *matHeaderRowDef="displayedColumns" style="margin-top: -1rem; margin-bottom: -1rem;"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns" style="margin-top: -0.5rem; margin-bottom: -0.5rem;"></mat-row>
     </mat-table>
     <mat-paginator
       [length]="this.dataTable.length"
       [pageSize]="10"
-      [pageSizeOptions]="[10, 25, 50]"
+      style="margin-bottom: -1rem;"
     ></mat-paginator>
 
   </mat-card-content>

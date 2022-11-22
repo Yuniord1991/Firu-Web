@@ -1,0 +1,223 @@
+<div class="container mt-1" style="margin-bottom: -0.7rem; z-index: 200;">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <img src="../../assets/Images/voluntarios.png" width="250" height="50" style="margin-left: 3.5rem;">
+    </div>
+  </div>
+</div>
+<mat-card class="container" style="z-index: -200;">
+  <div class="row" style="margin-top: -0.6rem; margin-bottom: -0.6rem;">
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="DNI"  formControlName="dni">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('dni').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Nombre" formControlName="nombre">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('nombre').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Apellido"  formControlName="apellido">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('apellido').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Edad"  formControlName="edad">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('edad').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <!-- <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Organizacion"  formControlName="organizacion">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('organizacion').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div> -->
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Provincia"  formControlName="provincia">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('provincia').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Ciudad"  formControlName="ciudad">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('ciudad').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="row" style="margin-bottom: -0.6rem;">
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Localidad"  formControlName="localidad">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('localidad').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-1 z2">
+      <button
+        mat-raised-button
+        class="floater"
+        (click)="loadTable()"
+      >
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card>
+
+<mat-card class="container mt-1 mb-3">
+  <mat-card-content>
+    <mat-table [dataSource]="dataTable" matSort matSortDisableClear>
+
+      <ng-container matColumnDef="dni">
+        <mat-header-cell *matHeaderCellDef>DNI</mat-header-cell
+        >
+        <mat-cell *matCellDef="let voluntario">
+          <div class="nombre" [matTooltip]="voluntario.dni">{{ voluntario.dni }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell
+        >
+        <mat-cell *matCellDef="let voluntario">
+          <div [matTooltip]="voluntario.nombre">{{ voluntario.nombre }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="apellido">
+        <mat-header-cell *matHeaderCellDef>Apellido</mat-header-cell
+        >
+        <mat-cell *matCellDef="let voluntario">
+          <div [matTooltip]="voluntario.apellido">{{ voluntario.apellido }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="edad">
+        <mat-header-cell *matHeaderCellDef>Edad</mat-header-cell
+        >
+        <mat-cell *matCellDef="let voluntario">
+          <div [matTooltip]="voluntario.edad">{{ voluntario.edad }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- <ng-container matColumnDef="organizacion">
+        <mat-header-cell *matHeaderCellDef>Organizacion</mat-header-cell
+        >
+        <mat-cell *matCellDef="let voluntario">
+          <div [matTooltip]="voluntario.organizacion">{{ voluntario.organizacion }}</div>
+        </mat-cell>
+      </ng-container> -->
+
+      <ng-container matColumnDef="provincia">
+        <mat-header-cell *matHeaderCellDef>Provincia</mat-header-cell
+        >
+        <mat-cell *matCellDef="let voluntario">
+          <div [matTooltip]="voluntario.provincia">{{ voluntario.provincia }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="ciudad">
+        <mat-header-cell *matHeaderCellDef>Ciudad</mat-header-cell
+        >
+        <mat-cell *matCellDef="let voluntario">
+          <div [matTooltip]="voluntario.ciudad">{{ voluntario.ciudad }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="localidad">
+        <mat-header-cell *matHeaderCellDef>Localidad</mat-header-cell
+        >
+        <mat-cell *matCellDef="let voluntario">
+          <div [matTooltip]="voluntario.localidad">{{ voluntario.localidad }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns" style="margin-top: -1rem; margin-bottom: -1rem;"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns" style="margin-top: -0.5rem; margin-bottom: -0.5rem;"></mat-row>
+    </mat-table>
+    <mat-paginator
+      [length]="this.dataTable.length"
+      [pageSize]="10"
+      style="margin-bottom: -1rem;"
+    ></mat-paginator>
+
+  </mat-card-content>
+</mat-card>

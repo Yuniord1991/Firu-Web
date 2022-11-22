@@ -1,0 +1,158 @@
+<div class="container mt-5" style="margin-bottom: -0.7rem; z-index: 200;">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <img src="../../assets/Images/movimientos.png" width="250" height="50" style="margin-left: 3.5rem;">
+    </div>
+  </div>
+</div>
+<mat-card class="container align-items-center w-50" style="z-index: -200;">
+  <hr>
+  <div class="row justify-content-center" >
+    <div class="col-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100" >
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="tipo">
+          <mat-option *ngFor="let tipo of tipos" [value]="tipo">
+            {{ tipo }}
+          </mat-option>
+        </mat-select>
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('tipo').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Monto" formControlName="monto" type="text" pattern="\d*" maxlength="8" required>
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('monto').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+
+  </div>
+
+  <div class="row justify-content-center">
+
+    <div class="col-lg-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Motivo"  formControlName="motivo">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('motivo').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input
+          matInput
+          [matDatepicker]="picker"
+          placeholder="Fecha"
+          formControlName="fecha"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="row justify-content-center">
+
+    <div class="col-lg-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Destino"  formControlName="destino">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('destino').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-5"  [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Direccion del Destino" formControlName="direccionDestino">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('direccionDestino').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="row justify-content-center">
+
+    <div class="col-lg-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Remitente" formControlName="remitente">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('remitente').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-5"  [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Direccion del Remitente" formControlName="direccionRemitente">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('direccionRemitente').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <!-- [disabled]="registerForm.invalid" -->
+  <div class="row justify-content-center mt-3 mb-3">
+    <button mat-raised-button color="primary" class="col-4 align-center mr-2" (click)="register()" [disabled]="this.formGroup.invalid">Registrar Movimiento</button>
+    <button mat-raised-button color="primary" class="col-4 align-center ml-2" routerLink="/dashboard">Volver</button>
+  </div>
+
+</mat-card>

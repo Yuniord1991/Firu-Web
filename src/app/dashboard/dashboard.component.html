@@ -32,7 +32,12 @@
     <div class="row">
 
       <div class="col">
-        <h5 class="m-3">Movimientos / Facturacion</h5>
+        <div class="row ml-3 mr-3 mt-3">
+          <h5 class="">Movimientos / Facturacion</h5>
+          <button class="col-2 ml-2" mat-button matTooltip="Alta Movimiento" routerLink="/forms/movimiento">
+            <span class="material-icons mb-2" style="color: rgb(5, 166, 5);">add_circle_outline</span>
+          </button>
+        </div>
 
         <mat-card class="m-2 mat-elevation-z3 mb-4">
           <hr class="hrCard" style="background-color: rgb(162, 0, 255);">
@@ -48,11 +53,11 @@
             </div>
 
             <div class="col">
-              <p class="pl-3">{{movimientos.ingresos}}</p>
+              <p class="pl-2">{{movimientos.ingresos}}</p>
             </div>
 
             <div class="col" style="margin-top: -0.4rem; margin-left: 7rem;">
-              <button mat-button matTooltip="Ver ingresos">
+              <button mat-button matTooltip="Ver ingresos" routerLink="/dashboard-tables/movimientos/ingresos">
                 <span class="material-icons">
                   more_horiz
                 </span>
@@ -75,11 +80,11 @@
             </div>
 
             <div class="col">
-              <p class="pl-3">{{movimientos.donaciones}}</p>
+              <p class="pl-2">{{movimientos.donaciones}}</p>
             </div>
 
             <div class="col" style="margin-top: -0.4rem; margin-left: 7rem;">
-              <button mat-button matTooltip="Ver donaciones">
+              <button mat-button matTooltip="Ver donaciones" routerLink="/dashboard-tables/movimientos/donaciones">
                 <span class="material-icons">
                   more_horiz
                 </span>
@@ -103,11 +108,11 @@
             </div>
 
             <div class="col">
-              <p class="pl-3">{{movimientos.egresos}}</p>
+              <p class="pl-2">{{movimientos.egresos}}</p>
             </div>
 
             <div class="col" style="margin-top: -0.4rem; margin-left: 7rem;">
-              <button mat-button matTooltip="Ver egresos">
+              <button mat-button matTooltip="Ver egresos" routerLink="/dashboard-tables/movimientos/egresos">
                 <span class="material-icons">
                   more_horiz
                 </span>
@@ -120,7 +125,13 @@
       </div>
 
       <div class="col">
-        <h5 class="m-3">Mascotas Publicadas</h5>
+        <div class="row ml-3 mr-3 mt-3">
+          <h5 class="">Mascotas Publicadas</h5>
+          <button class="col-2 ml-2" mat-button matTooltip="Alta Mascotas" routerLink="/forms/mascota">
+            <span class="material-icons mb-2" style="color: rgb(5, 166, 5);">add_circle_outline</span>
+          </button>
+        </div>
+        <!-- <h5 class="m-3">Mascotas Publicadas</h5> -->
         <mat-card class="m-2 mat-elevation-z3">
           <!-- extendHeight -->
           <hr class="hrCard" style="background-color: rgb(14, 160, 123);">
@@ -177,7 +188,7 @@
           </div>
 
           <div class="row" style="margin-top: -0.4rem; margin-left: 7rem;">
-            <button mat-button matTooltip="Ver listado" style="font-size: 12px;" >
+            <button mat-button matTooltip="Ver listado" style="font-size: 12px;" routerLink="/filter">
               ver todo
             </button>
           </div>
@@ -186,7 +197,13 @@
       </div>
 
       <div class="col">
-        <h5 class="m-3">Voluntarios</h5>
+        <div class="row ml-3 mr-3 mt-3">
+          <h5 class="">Voluntarios</h5>
+          <button class="col-2 ml-2" mat-button matTooltip="Alta Voluntarios" routerLink="/forms/voluntario">
+            <span class="material-icons mb-2" style="color: rgb(5, 166, 5);">add_circle_outline</span>
+          </button>
+        </div>
+        <!-- <h5 class="m-3">Voluntarios</h5> -->
         <mat-card class="m-2 mat-elevation-z3 ">
           <hr class="hrCard" style="background-color: rgb(250, 139, 178);">
 
@@ -202,7 +219,7 @@
           </div>
           <hr>
           <div class="row" style="margin-top: -0.4rem; margin-left: 7rem;">
-            <button mat-button matTooltip="Ver listado" style="font-size: 12px;" >
+            <button mat-button matTooltip="Ver listado" style="font-size: 12px;" routerLink="/dashboard-tables/voluntarios">
               ver todo
             </button>
           </div>
@@ -212,7 +229,13 @@
 
       <div class="col">
         <div>
-          <h5 class="m-3">Adoptantes en Espera</h5>
+          <div class="row ml-3 mr-3 mt-3">
+            <h5 class="">Adoptantes en Espera</h5>
+            <button class="col-2 ml-2" mat-button matTooltip="Alta Adoptantes" routerLink="/forms/adoptante">
+              <span class="material-icons mb-2" style="color: rgb(5, 166, 5);">add_circle_outline</span>
+            </button>
+          </div>
+          <!-- <h5 class="m-3">Adoptantes en Espera</h5> -->
           <mat-card class="m-2 mat-elevation-z3">
             <hr class="hrCard" style="background-color: rgb(255, 159, 74);">
 
@@ -224,7 +247,7 @@
             </div>
             <hr>
             <div class="row" style="margin-top: -0.8rem; margin-left: 7rem;">
-              <button mat-button matTooltip="Ver todo" style="font-size: 12px;" >
+              <button mat-button matTooltip="Ver todo" style="font-size: 12px;" routerLink="/dashboard-tables/adoptantes/espera">
                 ver todo
               </button>
             </div>
@@ -245,7 +268,7 @@
             </div>
             <hr>
             <div class="row" style="margin-top: -0.8rem; margin-left: 7rem;">
-              <button mat-button matTooltip="Ver todo" style="font-size: 12px;" >
+              <button mat-button matTooltip="Ver todo" style="font-size: 12px;" routerLink="/dashboard-tables/adoptantes/malosadoptantes">
                 ver todo
               </button>
             </div>
@@ -259,5 +282,19 @@
 
     </div>
   </div>
+
+<!-- Footer -->
+<!-- <footer class="page-footer font-small teal pt-3 fixed-bottom">
+  <div class="container-fluid text-center text-md-left">
+    <div class="row">
+
+      <h6>alta movimiento</h6>
+      <h6>alta mascota</h6>
+      <h6>alta voluntario</h6>
+      <h6>alta voluntario</h6>
+
+    </div>
+  </div>
+</footer> -->
 
 </body>

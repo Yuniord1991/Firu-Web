@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="noSC">
+  <div [ngSwitch]="this.formToShow">
+    <span class="state" *ngSwitchCase="'movimiento'">
+      <app-form-movimiento
+        class="context"
+      ></app-form-movimiento>
+    </span>
+    <span class="state" *ngSwitchCase="'voluntario'">
+      <app-form-voluntario
+        class="context"
+      ></app-form-voluntario>
+    </span>
+    <span class="state" *ngSwitchCase="'adoptante'">
+      <app-form-adoptante
+        class="context"
+      ></app-form-adoptante>
+    </span>
+    <span class="state" *ngSwitchCase="'mascota'">
+      <app-form-mascota
+        class="context"
+      ></app-form-mascota>
+    </span>
+  </div>
+
+  <!-- FONDO ANIMADO, TIENE QUE IR ABAJO PARA QUE FUNCIONE -->
+  <div class="area">
+    <!-- <img class="elevation" src="../../../assets/Images/queMascotaBuscas.png" style="width: 30rem; margin-left:32rem; top: 50vh;"> -->
+    <ul class="circles">
+      <!-- cat wools -->
+        <li class="cat-wools"></li>
+        <li class="cat-wools"></li>
+        <li class="cat-wools"></li>
+        <li class="cat-wools"></li>
+        <li class="cat-wools"></li>
+        <li class="cat-wools"></li>
+        <li class="cat-wools"></li>
+        <li class="cat-wools"></li>
+        <li class="cat-wools"></li>
+        <li class="cat-wools"></li>
+    </ul>
+    <!-- dog bones -->
+    <ul class="bones">
+      <li class="dog-bones"></li>
+        <li class="dog-bones"></li>
+        <li class="dog-bones"></li>
+        <li class="dog-bones"></li>
+        <li class="dog-bones"></li>
+        <li class="dog-bones"></li>
+        <li class="dog-bones"></li>
+        <li class="dog-bones"></li>
+        <li class="dog-bones"></li>
+        <li class="dog-bones"></li>
+    </ul>
+    <ul class="circles2">
+      <!-- cat wools 2-->
+        <li class="cat-wools2"></li>
+        <li class="cat-wools2"></li>
+        <li class="cat-wools2"></li>
+        <li class="cat-wools2"></li>
+        <li class="cat-wools2"></li>
+        <li class="cat-wools2"></li>
+        <li class="cat-wools2"></li>
+        <li class="cat-wools2"></li>
+        <li class="cat-wools2"></li>
+        <li class="cat-wools2"></li>
+    </ul>
+    <!-- dog bones 2-->
+    <ul class="bones2">
+        <li class="dog-bones2"></li>
+        <li class="dog-bones2"></li>
+        <li class="dog-bones2"></li>
+        <li class="dog-bones2"></li>
+        <li class="dog-bones2"></li>
+        <li class="dog-bones2"></li>
+        <li class="dog-bones2"></li>
+        <li class="dog-bones2"></li>
+        <li class="dog-bones2"></li>
+        <li class="dog-bones2"></li>
+    </ul>
+  </div >
+</div>

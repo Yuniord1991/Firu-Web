@@ -1,0 +1,197 @@
+<div class="container mt-1" style="margin-bottom: -1rem; z-index: 200;">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <img src="../../assets/Images/movimientos.png" width="250" height="47" style="margin-left: 3.5rem;">
+    </div>
+  </div>
+</div>
+<mat-card class="container" style="z-index: -200;">
+  <div class="row">
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100" >
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="tipo">
+          <mat-option *ngFor="let tipo of tipos" [value]="tipo">
+            {{ tipo }}
+          </mat-option>
+        </mat-select>
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('tipo').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Remitente"  formControlName="remitente">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('remitente').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Destino"  formControlName="destino">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('destino').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Motivo"  formControlName="motivo">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('motivo').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-1" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input
+          matInput
+          [matDatepicker]="picker"
+          placeholder="Fecha"
+          formControlName="fecha"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Monto"  formControlName="monto">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('monto').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-1 z2">
+      <button
+        mat-raised-button
+        class="floater"
+        (click)="loadTable()"
+      >
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+
+  </div>
+</mat-card>
+
+<mat-card class="container mt-2 mb-3">
+  <mat-card-content>
+    <mat-table [dataSource]="dataTable" matSort matSortDisableClear>
+
+      <ng-container matColumnDef="tipo">
+        <mat-header-cell *matHeaderCellDef >Tipo</mat-header-cell
+        >
+        <mat-cell *matCellDef="let movimiento">
+          <div class="nombre" [matTooltip]="movimiento.tipo">{{ movimiento.tipo }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="remitente">
+        <mat-header-cell *matHeaderCellDef >Remitente</mat-header-cell
+        >
+        <mat-cell *matCellDef="let movimiento">
+          <div [matTooltip]="movimiento.remitente">{{ movimiento.remitente }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="destino">
+        <mat-header-cell *matHeaderCellDef >Destino</mat-header-cell
+        >
+        <mat-cell *matCellDef="let movimiento">
+          <div [matTooltip]="movimiento.destino">{{ movimiento.destino }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="motivo">
+        <mat-header-cell *matHeaderCellDef >Motivo</mat-header-cell
+        >
+        <mat-cell *matCellDef="let movimiento">
+          <div [matTooltip]="movimiento.motivo">{{ movimiento.motivo }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="fecha">
+        <mat-header-cell *matHeaderCellDef >Fecha</mat-header-cell
+        >
+        <mat-cell *matCellDef="let movimiento">
+          <div [matTooltip]="movimiento.fecha">{{ movimiento.fecha | date:'dd/MM/yyyy' }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="monto">
+        <mat-header-cell *matHeaderCellDef >Monto</mat-header-cell
+        >
+        <mat-cell *matCellDef="let movimiento">
+          <div [matTooltip]="movimiento.monto">{{ movimiento.monto }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="direccionRemitente">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Direccion del Remitente</mat-header-cell
+        >
+        <mat-cell *matCellDef="let movimiento">
+          <div [matTooltip]="movimiento.direccionRemitente">{{ movimiento.direccionRemitente }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="direccionDestino">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Direccion del Destinatario</mat-header-cell
+        >
+        <mat-cell *matCellDef="let movimiento">
+          <div [matTooltip]="movimiento.direccionDestino">{{ movimiento.direccionDestino }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns" style="margin-top: -1rem; margin-bottom: -1rem;"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"  style="margin-top: -0.5rem; margin-bottom: -0.5rem;"></mat-row>
+    </mat-table>
+    <mat-paginator
+      [length]="this.dataTable.length"
+      [pageSize]="10"
+      style="margin-bottom: -1rem;"
+    ></mat-paginator>
+
+  </mat-card-content>
+</mat-card>

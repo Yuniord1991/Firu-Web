@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
@@ -62,8 +62,17 @@ export class PetsService {
     return this.httpClient.get<any>(`Usuarios/${usuarioId}`);
   }
 
-  post(body: string): Observable<void> {
-    return this.httpClient.post<void>("Usuarios", body);
+  post(
+    body: string
+  ): Observable<any> {
+
+    // ESTO VA PARA LOS POSTS
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    // Y AHORA AGREGAR LOS HEADERS COMO PARAMETROS TAMBIEN
+    return this.httpClient.post<any>("https://localhost:5001/api/Mascotas/PostMascota", body,  {headers: headers});
   }
 
   put(body: string): Observable<void> {

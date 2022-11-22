@@ -1,0 +1,162 @@
+<div class="container mt-5" style="margin-bottom: -0.7rem; z-index: 200;">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <img src="../../assets/Images/Mascotas.png" width="250" height="50" style="margin-left: 3.5rem;">
+    </div>
+  </div>
+</div>
+<mat-card class="container align-items-center w-50" style="z-index: -200;">
+  <hr>
+  <div class="row justify-content-center" >
+
+
+    <div class="col-lg-5" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Nombre"  formControlName="nombre">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('nombre').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-4" [formGroup]="formGroup">
+      <mat-form-field class="w-100" >
+        <mat-label>Especie</mat-label>
+        <mat-select formControlName="especie">
+          <mat-option *ngFor="let specie of species" [value]="specie.label">
+            {{ specie.name }}
+          </mat-option>
+        </mat-select>
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('specie').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="row justify-content-center">
+
+    <div class="col-lg-4" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Raza"  formControlName="raza">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('raza').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-3" [formGroup]="formGroup">
+      <mat-form-field class="w-100" >
+        <mat-label>Tamaño</mat-label>
+        <mat-select formControlName="tamano">
+          <mat-option *ngFor="let size of sizes" [value]="size.id">
+            {{ size.label }}
+          </mat-option>
+        </mat-select>
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('size').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Peso" formControlName="peso" type="text" pattern="[0-9]+([\.,][0-9]+)?" maxlength="8" required>
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('peso').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="row justify-content-center">
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100" >
+        <mat-label>Edad</mat-label>
+        <mat-select formControlName="edad">
+          <mat-option *ngFor="let age of ages" [value]="age">
+            {{ age }}
+          </mat-option>
+        </mat-select>
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('age').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-3" [formGroup]="formGroup">
+      <mat-form-field class="w-100" >
+        <mat-label>Ciudad</mat-label>
+        <mat-select formControlName="ciudad">
+          <mat-option *ngFor="let city of cities" [value]="city.label">
+            {{ city.label }}
+          </mat-option>
+        </mat-select>
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('city').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-2">
+      <div class="w-100 mt-3" >
+        <mat-checkbox (click)="this.assignCheck()">Castrado</mat-checkbox>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- [disabled]="registerForm.invalid" -->
+  <div class="row justify-content-center mt-3 mb-3">
+    <button mat-raised-button color="primary" class="col-4 align-center mr-2" (click)="register()" [disabled]="this.formGroup.invalid">Registrar Mascota</button>
+    <button mat-raised-button color="primary" class="col-4 align-center ml-2" routerLink="/dashboard">Volver</button>
+  </div>
+
+</mat-card>
