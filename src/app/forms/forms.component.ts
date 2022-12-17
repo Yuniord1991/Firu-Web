@@ -33,6 +33,9 @@ export class FormsComponent implements OnInit {
       case "/forms/adoptante":
         this.formToShow = "adoptante";
         break;
+      case "/forms/espera":
+        this.formToShow = "espera";
+        break;
       default:
         this.router.navigate(["/dashboard"]);
         break;

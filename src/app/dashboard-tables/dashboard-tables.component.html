@@ -18,6 +18,11 @@
         [tipoSelected]="this.sendAdopterType"
       ></app-adoptantes-table>
     </span>
+    <span class="state" *ngSwitchCase="'adoptantesEspera'">
+      <app-adoptantes-espera-table
+        class="context"
+      ></app-adoptantes-espera-table>
+    </span>
   </div>
 
   <!-- FONDO ANIMADO, TIENE QUE IR ABAJO PARA QUE FUNCIONE -->

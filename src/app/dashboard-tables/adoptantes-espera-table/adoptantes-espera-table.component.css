@@ -1,0 +1,19 @@
+.floater {
+  margin-top: 6px;
+}
+.secondary {
+  /* color: grey; */
+  background-color: rgb(229, 72, 14);
+}
+
+mat-cell {
+  justify-content: center;
+}
+
+mat-header-cell {
+  justify-content: center;
+}
+
+.noSC {
+  overflow: hidden; /* Hide scrollbars */
+}

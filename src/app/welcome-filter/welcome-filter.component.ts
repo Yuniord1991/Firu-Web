@@ -30,6 +30,10 @@ export class WelcomeFilterComponent implements OnInit {
     if (this.router.url.toString().includes("/filter")) {
       // console.log("route", this.router.url.toString());
       this.step = "petType";
+    } else if (this.router.url.toString().includes("/MascotasTable"))
+    {
+      console.log("hola sis is is is ");
+      this.step = "none";
     }
   }
 

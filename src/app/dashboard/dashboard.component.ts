@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdopterEsperaService } from '../Services/adopter-espera.service';
 import { AdopterService } from '../Services/adopter.service';
 import { MovimientoService } from '../Services/movimiento.service';
 import { PetsService } from '../Services/pets.service';
@@ -26,6 +27,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     private router: Router,
     private adopterService: AdopterService,
+    private adopterEsperaService: AdopterEsperaService,
     private volunteerService: VolunteerService,
     private movimientoService: MovimientoService,
     private petService: PetsService,
@@ -62,19 +64,23 @@ export class DashboardComponent implements OnInit {
       this.volunteerService.GetVoluntariosForDashboard().subscribe( volunteersResponse =>{
         this.petService.GetMascotasForDashboard().subscribe( petsResponse =>{
           this.movimientoService.GetMovimientosForDashboard().subscribe( movResponse =>{
-            console.log('adoptersResponse', adoptersResponse);
-            console.log('volunteersResponse', volunteersResponse);
-            console.log('petsResponse', petsResponse);
-            console.log('movResponse', movResponse);
+            this.adopterEsperaService.GetAdoptantesEsperaForDashboard().subscribe( adoptersEsperaResponse =>{
 
-            this.movimientos = movResponse;
-            console.log('this.movimientos', this.movimientos);
-            this.volunteerList = volunteersResponse.voluntarios;
-            this.espAdoptersList = adoptersResponse.listaEsperaAdoptantes;
-            this.badAdoptersList = adoptersResponse.listaMalosAdoptantes;
-            this.perros = petsResponse.perros;
-            this.gatos = petsResponse.gatos;
-            this.total = petsResponse.total;
+              console.log('adoptersEsperaResponse', adoptersEsperaResponse);
+              console.log('adoptersResponse', adoptersResponse);
+              console.log('volunteersResponse', volunteersResponse);
+              console.log('petsResponse', petsResponse);
+              console.log('movResponse', movResponse);
+
+              this.movimientos = movResponse;
+              console.log('this.movimientos', this.movimientos);
+              this.volunteerList = volunteersResponse.voluntarios;
+              this.espAdoptersList = adoptersEsperaResponse.listaEsperaAdoptantes;
+              this.badAdoptersList = adoptersResponse.listaMalosAdoptantes;
+              this.perros = petsResponse.perros;
+              this.gatos = petsResponse.gatos;
+              this.total = petsResponse.total;
+            });
           });
         });
       });
@@ -92,6 +98,13 @@ export class DashboardComponent implements OnInit {
     {
       this.router.navigate(["/main"]);
     }
+  }
+
+  closeSession()
+  {
+    localStorage.removeItem("userLogged");
+    this.showUser = false;
+    this.router.navigate(["/main"]);
   }
 
 }

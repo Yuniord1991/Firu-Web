@@ -1,0 +1,237 @@
+<div class="container mt-1" style="margin-bottom: -1rem; z-index: 200;">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <img src="../../assets/Images/AdoptantesEnEspera.png" width="400" height="57" style="margin-left: -2rem;">
+    </div>
+  </div>
+</div>
+<mat-card class="container" style="z-index: -200;">
+  <div class="row" style="margin-top: -0.6rem; margin-bottom: -0.6rem;">
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Nombre" formControlName="nombre">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('nombre').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Telefono"  formControlName="telefono">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('telefono').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Ciudad"  formControlName="ciudad">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('ciudad').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100" >
+        <mat-label>Especie</mat-label>
+        <mat-select formControlName="especie">
+          <mat-option *ngFor="let esp of especie" [value]="esp.label">
+            {{ esp.name }}
+          </mat-option>
+        </mat-select>
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('especie').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Raza"  formControlName="raza">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('raza').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Tamaño"  formControlName="tamano">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('tamano').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="row" style="margin-bottom: -0.6rem;">
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Color"  formControlName="color">
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('color').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-2" [formGroup]="formGroup">
+      <mat-form-field class="w-100" >
+        <mat-label>Edad</mat-label>
+        <mat-select formControlName="edad">
+          <mat-option *ngFor="let ed of edad" [value]="ed">
+            {{ ed }}
+          </mat-option>
+        </mat-select>
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="$event.stopPropagation(formGroup.get('edad').reset())"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-1 z2">
+      <button
+        mat-raised-button
+        class="floater"
+        (click)="loadTable()"
+      >
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card>
+
+<mat-card class="container mt-1 mb-3">
+  <mat-card-content>
+    <mat-table [dataSource]="dataTable" matSort matSortDisableClear>
+
+      <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell
+        >
+        <mat-cell *matCellDef="let adoptanteEspera">
+          <div [matTooltip]="adoptanteEspera.nombre">{{ adoptanteEspera.nombre }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="telefono">
+        <mat-header-cell *matHeaderCellDef>Telefono</mat-header-cell
+        >
+        <mat-cell *matCellDef="let adoptanteEspera">
+          <div class="nombre" [matTooltip]="adoptanteEspera.telefono">{{ adoptanteEspera.telefono }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="ciudad">
+        <mat-header-cell *matHeaderCellDef>Ciudad</mat-header-cell
+        >
+        <mat-cell *matCellDef="let adoptanteEspera">
+          <div [matTooltip]="adoptanteEspera.ciudad">{{ adoptanteEspera.ciudad }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="especie">
+        <mat-header-cell *matHeaderCellDef>Especie</mat-header-cell
+        >
+        <mat-cell *matCellDef="let adoptanteEspera">
+          <div [matTooltip]="adoptanteEspera.especie">{{ adoptanteEspera.especie }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="raza">
+        <mat-header-cell *matHeaderCellDef>Raza</mat-header-cell
+        >
+        <mat-cell *matCellDef="let adoptanteEspera">
+          <div [matTooltip]="adoptanteEspera.raza">{{ adoptanteEspera.raza }}</div>
+        </mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="tamano">
+        <mat-header-cell *matHeaderCellDef>Tamaño</mat-header-cell
+        >
+        <mat-cell *matCellDef="let adoptanteEspera">
+          <div [matTooltip]="adoptanteEspera.tamano">{{ adoptanteEspera.tamano }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="color">
+        <mat-header-cell *matHeaderCellDef>Color</mat-header-cell
+        >
+        <mat-cell *matCellDef="let adoptanteEspera">
+          <div [matTooltip]="adoptanteEspera.color">{{ adoptanteEspera.color }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="edad">
+        <mat-header-cell *matHeaderCellDef>Edad</mat-header-cell
+        >
+        <mat-cell *matCellDef="let adoptanteEspera">
+          <div [matTooltip]="adoptanteEspera.edad">{{ adoptanteEspera.edad }}</div>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns" style="margin-top: -1rem; margin-bottom: -1rem;"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"  style="margin-top: -0.5rem; margin-bottom: -0.5rem;"></mat-row>
+    </mat-table>
+    <!-- [pageSizeOptions]="[10, 25, 50]" -->
+    <mat-paginator
+      [length]="this.dataTable.length"
+      [pageSize]="10"
+      style="margin-bottom: -1rem;"
+    ></mat-paginator>
+
+  </mat-card-content>
+</mat-card>

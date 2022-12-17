@@ -37,6 +37,11 @@ const routes: Routes = [
     data: { title: 'filter', animation: 'filter' }
   },
   {
+    path: 'MascotasTable',
+    component: WelcomeFilterComponent,
+    data: { title: 'filter', animation: 'filter' }
+  },
+  {
     path: 'dashboard-tables/:table',
     component: DashboardTablesComponent,
     data: { title: 'table', animation: 'filter' }

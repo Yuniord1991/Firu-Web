@@ -10,10 +10,7 @@
   <div class="collapse navbar-collapse " id="navbarNav">
     <ul class="navbar-nav ml-auto">                   <!-- the ml-auto keeps navbar content on the right side -->
       <li class="nav-item mr-4">
-        <a class="nav-link" href="#">Buscar Mascota</a>
-      </li>
-      <li class="nav-item mr-4">
-        <a class="nav-link" href="#">Adopción</a>
+        <a class="nav-link" routerLink="/filter">Buscar Mascota</a>
       </li>
       <li class="nav-item mr-4" *ngIf="!this.showUser">
         <a class="nav-link" routerLink="/login">Inicio de Sesión</a>

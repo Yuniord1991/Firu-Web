@@ -16,6 +16,11 @@
         class="context"
       ></app-form-adoptante>
     </span>
+    <span class="state" *ngSwitchCase="'espera'">
+      <app-form-adoptante-espera
+        class="context"
+      ></app-form-adoptante-espera>
+    </span>
     <span class="state" *ngSwitchCase="'mascota'">
       <app-form-mascota
         class="context"

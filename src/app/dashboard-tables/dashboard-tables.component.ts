@@ -57,8 +57,8 @@ export class DashboardTablesComponent implements OnInit {
         this.tableToShow = "adoptantes";
         this.sendAdopterType = "default";
         break;
-      case "/dashboard-tables/adoptantes/espera":
-        this.tableToShow = "adoptantes";
+      case "/dashboard-tables/adoptantesEspera":
+        this.tableToShow = "adoptantesEspera";
         this.sendAdopterType = "espera";
         break;
       case "/dashboard-tables/adoptantes/malosadoptantes":

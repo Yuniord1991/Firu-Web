@@ -19,11 +19,14 @@ import { DashboardTablesComponent } from './dashboard-tables/dashboard-tables.co
 import { MovimientosTableComponent } from './dashboard-tables/movimientos-table/movimientos-table.component';
 import { VoluntariosTableComponent } from './dashboard-tables/voluntarios-table/voluntarios-table.component';
 import { AdoptantesTableComponent } from './dashboard-tables/adoptantes-table/adoptantes-table.component';
+import { AdoptantesEsperaTableComponent } from './dashboard-tables/adoptantes-espera-table/adoptantes-espera-table.component';
 import { FormsComponent } from './forms/forms.component';
 import { FormVoluntarioComponent } from './forms/form-voluntario/form-voluntario.component';
 import { FormAdoptanteComponent } from './forms/form-adoptante/form-adoptante.component';
+import { FormAdoptanteEsperaComponent } from './forms/form-adoptante-espera/form-adoptante-espera.component';
 import { FormMovimientoComponent } from './forms/form-movimiento/form-movimiento.component';
 import { FormMascotaComponent } from './forms/form-mascota/form-mascota.component';
+import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.component';
 
 @NgModule({
   declarations: [
@@ -40,11 +43,14 @@ import { FormMascotaComponent } from './forms/form-mascota/form-mascota.componen
     MovimientosTableComponent,
     VoluntariosTableComponent,
     AdoptantesTableComponent,
+    AdoptantesEsperaTableComponent,
     FormsComponent,
     FormVoluntarioComponent,
     FormAdoptanteComponent,
+    FormAdoptanteEsperaComponent,
     FormMovimientoComponent,
-    FormMascotaComponent
+    FormMascotaComponent,
+    WhatsappButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,12 @@
       (petTypeEmitter)="getEmitter($event)"
       ></app-pets-type>
   </span>
+  <span class="state" *ngSwitchCase="'none'">
+    <app-pets-table
+      class="context"
+      [specieSelected]=""
+    ></app-pets-table>
+  </span>
   <span class="state" *ngSwitchCase="'DOG'">
     <app-pets-table
       class="context"
